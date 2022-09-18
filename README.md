@@ -12,8 +12,7 @@ Flask server.
         - \path\to\env\Scripts\activate (Windows)
         - source /path/to/env/bin/activate (Linux)
 
-        source /opt/carpeta1/carpeta2/nuetro_proyecto
-- Nos movemos hasta la raiz de nuestro proyecto
+- Nos movemos hasta la raiz de nuestro proyecto con el comando cd
 - Instalar las dependencias
 
         pip install -r requirements.txt
