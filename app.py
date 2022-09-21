@@ -1,51 +1,34 @@
-from flask import *
+import flask
+from flask import Flask, render_template, request
 import datetime
 
 app = Flask(__name__)
-# welcome
-
-# route => url/method
-
-# match
-"""
-@app.route('/')
-def home():
-    context = {
-        'titulo': 'Flask Server',
-        'clase': '17',
-        'hora': '19:55'
-    }
-    return render_template('home.html', **context)
-
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome.html')
-
-@app.route('/sing-up')
-def sign_up():
-    nombre = param[0]
-    base_datos.create(user)
-    return 'usuario creado'
-    pass
-"""
 
 @app.route('/')
 def inicio():
     #return 'Página principal'   
     return render_template('home.html')
 
-@app.route('/articulos/')
-def articulos():
-    return 'Lista de artículos' 
 
-@app.route("/articulos/<int:id>")
-def mostrar_ariculo(id):
-    return 'Vamos a mostrar el artículo con id:{}'.format(id)
+@app.route('/procesar_gastos', methods=['POST'])
+def procesar_gastos():
+    pass
 
-@app.route('/acercade')
-def acercade():
-    return 'Página acerca de...'
 
+@app.route('/procesar_transferencias', methods=['POST'])
+def procesar_transferencias():
+    pass
+
+
+@app.route('/proceso')
+def proceso():
+    return render_template('proceso.html')
+
+@app.route('/procesar_depositos', methods=["POST"])
+def procesar_depositos():
+    file = request.files['file']
+    #return flask.redirect(flask.url_for('/'), code=200)
+    return ''
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
